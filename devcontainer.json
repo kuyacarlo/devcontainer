@@ -1,0 +1,19 @@
+{
+    "image": "kuyacarlo/codespace:latest",
+    "customizations": {
+        "vscode": {
+            "extensions": ["ms-vscode.cpptools", "ms-python.python", "MS-vsliveshare.vsliveshare-pack"],
+            "settings": {
+              "python.autoComplete.showAdvancedMembers": false,
+              "scm.countBadge": "off",
+              "terminal.integrated.profiles.linux": {
+                "zsh (login)": {
+                  "path": "zsh",
+                  "args": ["-l"]
+                }
+              },
+              "terminal.integrated.defaultProfile.linux": "zsh (login)"
+            }
+        }
+    }
+}
