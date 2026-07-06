@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -e
+
+echo "🔄 postStart: environment check"
+
+# PostgreSQL (only if initialized cluster exists)
+if command -v pg_ctlcluster >/dev/null 2>&1; then
+    if ls /etc/postgresql/*/main >/dev/null 2>&1; then
+        echo "🐘 PostgreSQL detected (cluster exists)"
+        sudo service postgresql start || true
+    else
+        echo "🐘 PostgreSQL installed but not initialized (skipping start)"
+    fi
+fi
+
+echo "✅ postStart ready"
